@@ -1,3 +1,26 @@
+set HTTP_PROXY=http://A200182673:Welcome%232023@10.24.19.83:8080
+set HTTPS_PROXY=http://A200182673:Welcome%232023@10.24.19.83:8080
+
+Installed Packages
+
+
+npm i --save-dev create-react-component-folder ---> to create react component --> command --> >npx crcf components/Button Input
+npm install react-bootstrap bootstrap
+npm install sass
+npm install --save flow-bin
+npm install --save typescript @types/node @types/react @types/react-dom @types/jest
+
+added Auto Import
+
+npm install -g react-devtools
+npm install --save react-router-dom
+npm i react-router-dom react-redux redux
+
+using cookies
+npm i --save-dev @types/js-cookie
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
