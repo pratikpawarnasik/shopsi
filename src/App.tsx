@@ -12,7 +12,7 @@ import {
   useNavigate,
 } from "react-router-dom";
 import AllProduct from './Product/AllProduct';
-import AlignmentExample from './routes/Nav';
+import Layout from './routes/Nav';
 import Cookies from 'js-cookie';
 import Protected from './routes/Protected';
 
@@ -56,23 +56,23 @@ function App() {
   console.log(getSession());
   
   return (
-
+    
     <ThemeProvider
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
       minBreakpoint="xxs"
+      className="mainContainer"
     >
 
-      <AlignmentExample />
       <BrowserRouter>
-        <div>
-          <Navbar />
+          <Layout />
          
           <Routes>
-            <Route path='/' element={<Login />} />
+          {/* <Route path="/" element={<Layout />}> */}
+            <Route path='/login' element={<Login />} />
             <Route path='/products' element={<Protected isLoggedIn={getSession()}> <AllProduct /> </Protected> } />
             <Route path='/Login' element={<Login />} />
+          {/* </Route> */}
           </Routes>
-        </div>
       </BrowserRouter>
       {/* <BrowserRouter>
         <Routes>
