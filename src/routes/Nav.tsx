@@ -4,10 +4,9 @@ import { Outlet, Link } from "react-router-dom";
 const Layout = () => {
   return (
     <>
-    <Container className="p-5">
-      <ul className="nav justify-content-end">
+      <ul className="nav justify-content-end p-4  bg-light">
         <li className="nav-item">
-          <Link to="/login" className="nav-link active">Users</Link>
+          <Link to="/" className="nav-link active">Users</Link>
         </li>
         <li className="nav-item">
           <Link to="/login" className="nav-link">Users</Link>
@@ -21,7 +20,6 @@ const Layout = () => {
       </ul>
 
       <Outlet />
-      </Container>
     </>
   )
 };

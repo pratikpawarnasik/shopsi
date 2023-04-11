@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Navbar, ThemeProvider } from 'react-bootstrap';
+import { Container, Navbar, ThemeProvider } from 'react-bootstrap';
 import './App.css';
 import Login from './auth/login';
 import {
@@ -35,7 +35,7 @@ import Protected from './routes/Protected';
 
 function App() {
   const getSession = () => {
- 
+
     const jwt = Cookies.get('token')
     let session
     try {
@@ -47,16 +47,16 @@ function App() {
         session = JSON.parse(window.atob(base64))
       }
     } catch (error) {
-      
-     
+
+
       console.log(error)
     }
     return session
   }
   console.log(getSession());
-  
+
   return (
-    
+
     <ThemeProvider
       breakpoints={['xxxl', 'xxl', 'xl', 'lg', 'md', 'sm', 'xs', 'xxs']}
       minBreakpoint="xxs"
@@ -64,25 +64,19 @@ function App() {
     >
 
       <BrowserRouter>
+        <Container className="p-5 pt-0">
           <Layout />
-         
+
           <Routes>
-          {/* <Route path="/" element={<Layout />}> */}
+            <Route path="/" element={<Login />} />
             <Route path='/login' element={<Login />} />
-            <Route path='/products' element={<Protected isLoggedIn={getSession()}> <AllProduct /> </Protected> } />
+            <Route path='/products' element={<Protected isLoggedIn={getSession()}> <AllProduct /> </Protected>} />
             <Route path='/Login' element={<Login />} />
-          {/* </Route> */}
+            {/* </Route> */}
           </Routes>
+        </Container>
       </BrowserRouter>
-      {/* <BrowserRouter>
-        <Routes>
-        <Route path="/" element={<Login />} />
-            <Route path="login" element={<Login />} />
-            <Route path="products" element={<AllProduct />} />
-            <Route path="contact" element={<AllProduct />} />
-            <Route path="*" element={<Login />} /> 
-        </Routes>
-    </BrowserRouter> */}
+
     </ThemeProvider>
 
   );
